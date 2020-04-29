@@ -32,7 +32,7 @@ download_springer_book <- function(book_spec_title, springer_table){
   clean_book_title <- str_replace(book_spec_title, '/', '-') # Avoiding '/' special character in filename
   clean_book_title <- str_replace(clean_book_title, ':', '-') # Avoiding ':' special character in filename
 
-  write.filename = file(paste0(clean_book_title, " - ", edition, ".pdf"), "wb")
+  write.filename = file(paste0(clean_book_title, " - ", edition, ".epub"), "wb")
   writeBin(pdf_file$content, write.filename)
   close(write.filename)
 

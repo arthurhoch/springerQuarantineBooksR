@@ -1,4 +1,4 @@
-#' Function that fetchs the pdf file and saves it in the current directory
+#' Function that fetchs the epub file and saves it in the current directory
 #'
 #' @importFrom dplyr arrange desc filter slice
 #' @importFrom httr GET
@@ -23,9 +23,9 @@ download_springer_book <- function(book_spec_title, springer_table){
   download_url <- aux$open_url %>%
     GET() %>%
     extract2('url') %>%
-    str_replace('book', paste0('content', file_sep, 'pdf')) %>%
+    str_replace('book', paste0('content', file_sep, 'epub')) %>%
     str_replace('%2F', file_sep) %>%
-    paste0('.pdf')
+    paste0('.epub')
 
   pdf_file = GET(download_url)
 
